@@ -1,0 +1,45 @@
+body {
+    /* bg from http://subtlepatterns.com */
+    background: #fff url(../img/textured_paper.png);
+}
+
+#picture-row {
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 1em auto 1em auto;
+    padding: 1em;
+    width: 95%;
+    border: 1px solid #666;
+}
+
+.picture {
+    width: 640px;
+    height: 480px;
+}
+
+#canvas {
+    display: none;
+}
+
+#control-panel {
+    
+}
+
+#countdown {
+    font-size: 10em;
+    font-family: georgia, arial, sans-serif;
+    line-height: 2;
+    text-align: center;
+}
+
+.effect-grayscale {
+    -webkit-filter: grayscale(1);
+}
+
+.effect-sepia {
+    -webkit-filter: sepia(1);
+}
+
+.effect-blur {
+    -webkit-filter: blur(3px);
+}

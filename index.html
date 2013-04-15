@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Narcissus - HTML5 video/canvas camera demo</title>
+        <meta charset="utf8">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="css/cam.css">
+    </head>
+    <body>
+    
+        <div class="container-fluid span11" id="container">
+            <div id="unsupported" class="hidden">
+                Sorry, your browser does not support webcam access.
+            </div>
+            
+            <div class="row-fluid" id="picture-row">
+                <span class="span7">
+                    <video id="video" 
+                           class="picture" 
+                           autoplay></video>
+                </span>
+                
+                <span class="span4 pull-right" id="control-panel">
+                    <div class="well">
+                        <form class="form-inline">
+                            Delay
+                            <div class="control-group">
+                                <label class="radio">
+                                    <input type="radio" 
+                                           name="delay" 
+                                           value="0" 
+                                           checked>0 seconds
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" 
+                                           name="delay" 
+                                           value="5000">5 seconds
+                                </label>
+                            </div>
+                            
+                            Effects
+                            <div class="control-group">
+                                <label class="checkbox">
+                                    <input type="checkbox"
+                                           class="effect"
+                                           id="effect-grayscale"> Grayscale
+                                </label>
+                                
+                                <label class="checkbox">
+                                    <input type="checkbox" 
+                                           class="effect"
+                                           id="effect-sepia"> Sepia
+                                </label>
+                                
+                                <label class="checkbox">
+                                    <input type="checkbox" 
+                                           class="effect"
+                                           id="effect-blur"> Blur                                     
+                                </label>
+                                
+                                <!--
+                                <input type="text"
+                                           class="input-mini"
+                                           id="effect-blur-value"
+                                           value="3px">
+                                -->
+                            </div>
+                            
+                            <a href="#" 
+                               id="takePhoto"
+                               class="btn btn-info btn-large btn-block"
+                               data-toggle="modal" 
+                               role="button">Take Photo</a>
+                               
+                            <div id="countdown"></div>
+                        </form>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+        <div class="modal hide fade" id="photo-modal">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3>Your Photo</h3>
+            </div>
+            <div class="modal-body" id="modal-photo-area">
+                <canvas id="canvas" width="640" height="480"></canvas>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn" data-dismiss="modal">Close</a>
+            </div>
+        </div>
+        
+        <script data-main="js/main" src="js/lib/require-jquery.js"></script>
+    </body>
+</html>
